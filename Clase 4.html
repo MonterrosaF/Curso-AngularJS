@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html data-ng-app>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,13 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
 </head>
-<body>
-    
+<body data-ng-controller="controlador1">
+    <div data-ng-show="true">
+        Ejemplos de directivas en AngularJS
+    </div>
+
+    <button data-ng-click="controladorBoton()" data-ng-show="false">
+        Ejemplo de boton en AngularJS
+    </button>
 </body>
 </html>
