@@ -44,59 +44,40 @@
       
   </head>
   <body>
-	  
-        <div ng-include src=" 'plantillas/encabezado.html' "> </div>
-        <div ng-include src=" 'plantillas/menu.html' "> </div>
 
+    <div ng-include src=" 'plantillas/encabezado.html' "> </div>
+    <div ng-include src=" 'plantillas/menu.html' "> </div>
+  
+  <h1>Bienvenido a BBT</h1>
 
-        <h1>Visita el NG-ZOO</h1>
+  <div ng-view ></div>
 
+  <ul class="menu">
+    <li><a href="#/animales/ave1">Ave 1</a></li>
+    <li><a href="#/animales/ave2">Ave 2</a></li>
+    <li><a href="#/animales/ave3">Ave 3</a></li>
+  </ul>
 
-        <div ng-view ></div>
+  <script>
+    var zoo = angular.module('zooApp', ['ngRoute'])
 
+    zoo.config(['$routeProvider',
+      function($routeProvider){
+        $routeProvider.
+        when('/animales/ave1', {
+          templateUrl: '/plantillas/ave1.html',
+        }).when('/animales/ave2', {
+          templateUrl: '/plantillas/ave2.html',
+        }).when('/animales/ave3', {
+          templateUrl: '/plantillas/ave3.html',
+        }).
+        otherwise({
+          redirectTo: '/',
+          templateUrl: 'plantillas/inicio.html'
+        });
+      }]);
 
-        <ul class="menu">
-            
-            <li> <a href="#/animales/ave1"> Ave 1 </a></li>
-            <li> <a href="#/animales/ave2"> Ave 2 </a></li>
-            <li> <a href="#/animales/ave3"> Ave 3</a></li>
-            
-        </ul>
-         
-      
-      
-
-      
-      
-      
-      <script>
-      
-          var zoo = angular.module( 'zooApp' , ['ngRoute'] )
-          
-          
-         zoo.config(['$routeProvider',
-              function($routeProvider) {
-                $routeProvider.
-                  when('/animales/ave1', {
-                    templateUrl: 'plantillas/ave1.html',
-                  }).
-                  when('/animales/ave2', {
-                    templateUrl: 'plantillas/ave2.html',
-                  }).
-                  when('/animales/ave3', {
-                    templateUrl: 'plantillas/ave3.html',
-                  }).
-                  otherwise({
-                    redirectTo: '/',
-                      templateUrl: 'plantillas/inicio.html',
-                  });
-              }]);
-
-           
-          
-      
-      </script>
-      
+  </script>
 
   </body>
 </html>
