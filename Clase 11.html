@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="promocionApp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+</head>
+<body>
+    
+    <div ng-controller="controlador1">
+        <button ng-click="clickSimple()">Click</button>
+        <button ng-dblclick="dobleSimple()">Click</button>
+        <h1>{{evento}}</h1>
+        <h1>{{evento2}}</h1>
+        <h1>{{evento3}}</h1>
+
+        <img src="imagen_share.png" ng-mouseleave="mouseAlejado()" ng-mouseenter="mouseCerca()">
+    </div>
+
+    <script>
+        var miApp = angular.module('promocionApp',[]);
+        miApp.controller('controlador1',['$scope', function($scope){
+            $scope.clickSimple = function(){
+                $scope.evento = "click"
+            }
+
+            $scope.dobleSimple = function (){
+                $scope.evento2 = "doble click"
+            }
+
+            $scope.mouseAlejado = function (){
+                $scope.evento3 = "El mouse esta fuera de la imagen"
+            }
+
+            $scope.mouseCerca = function (){
+                $scope.evento3 = "El mouse esta dentro de la imagen"
+            }
+        }]);
+    </script>
+</body>
+
+</html>

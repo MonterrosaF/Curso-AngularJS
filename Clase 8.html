@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="promocionApp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-controller="circunferencia">
+        <label>Diametro</label> <input type="text" ng-model="diametro"> <br>
+        <button ng-click="calcularCircunferencia()">Calcular Circunferencia</button>
+
+        {{circunferencia}}
+    </div>    
+
+    <script>
+        var miApp = angular.module('promocionApp',[]);
+
+        miApp.controller('circunferencia',['$scope',function($scope){
+            var  pi = 3.14;
+            $scope.calcularCircunferencia = function (){
+                $scope.circunferencia = $scope.diametro * pi
+            }
+        }])
+    </script>
+</body>
+
+</html>

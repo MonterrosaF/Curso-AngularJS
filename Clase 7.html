@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="promocionApp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+</head>
+
+<body>
+
+    <div ng-controller="controlador1">
+       nombre: {{nombre}}
+    </div>
+
+    <div ng-controller="controlador1">
+        apellido: {{apellido}}
+    </div>
+
+    <hr>
+
+    <script>
+        var miApp = angular.module('promocionApp',[]);
+        miApp.controller('controlador1',['$scope',function($scope){
+            $scope.nombre = "Felipe",
+            $scope.apellido = "Monterrosa"
+        }])
+    </script>
+</body>
+
+</html>

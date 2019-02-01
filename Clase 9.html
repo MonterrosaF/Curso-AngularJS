@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="promocionApp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-controller ="controlador1">
+        <h1>Nombres:</h1>
+        <ul>
+            <li ng-repeat="nombre in nombresSimples">{{nombre}}</li>
+        </ul>
+
+        <h1>Heroes:</h1>
+        <ul>
+            <li ng-repeat="heroe in heroes">{{heroe.nombre}} {{heroe.apellido}}</li>
+        </ul>
+    </div>
+
+    <script>
+        var miApp = angular.module('promocionApp', []);
+        miApp.controller('controlador1',['$scope', function($scope){
+            $scope.nombresSimples = ['Felipe', 'Brian', 'Andres'];
+
+            $scope.heroes = [
+            {
+                nombre: 'Arnold',
+                apellido: 'schwazenegger'
+            },
+            {
+                nombre: 'Pepito',
+                apellido: 'Perez'
+            },
+            {
+                nombre: 'Arnoldo',
+                apellido: 'Iguaran'
+            },
+            ]
+        }]);
+    </script>
+</body>
+
+</html>

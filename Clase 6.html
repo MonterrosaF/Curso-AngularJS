@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="promocionApp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-controller="controlador1">
+        <h1>¡Promoción de tours!</h1>
+        <h2>$25.000 cada uno</h2>
+        cantidad de tours: <label for="cantidad"></label> <input type="text" ng-model="cantidad"><br>
+        precio total: {{cantidad * precio | currency}}
+    </div>
+
+
+    <script>
+        var miApp = angular.module('promocionApp', []);
+
+        miApp.controller('controlador1', ['$scope', function ($scope) {
+            $scope.cantidad = 0;
+            $scope.precio = 25000
+        }]);
+    </script>
+
+</body>
+
+</html>
