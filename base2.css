@@ -1,0 +1,15 @@
+.contenedor{
+    margin: 10px auto;
+    border: 2px solid black;
+    text-align: center;
+    padding: 15px;
+    width: 600px;
+}
+
+.contenedor2{
+    text-align: center;
+}
+
+.angular{
+    background-color: red
+}

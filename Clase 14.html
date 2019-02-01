@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="promocionApp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="base2.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="controlador1">
+        <img src="{{imagenActual}}" ng-src="imagenActual">
+        <button ng-click="mostrarImagen('imagen_share.png')">Imagen 1</button>
+        <button ng-click="mostrarImagen('img_avived_20180711-104506_imagenes_lv_terceros_eso1823a-kWQG-U45833989330cQB-992x558@LaVanguardia-Web.jpg')">Imagen 2</button>
+    </div>
+
+    <script>
+        var miApp = angular.module('promocionApp',[]);
+        miApp.controller('controlador1',['$scope',function($scope){
+            $scope.imagenActual = "imagen_share.png"
+            $scope.mostrarImagen = function( _imagen ){
+                $scope.imagenActual = _imagen
+            }
+        }]);
+    </script>
+</body>
+
+</html>

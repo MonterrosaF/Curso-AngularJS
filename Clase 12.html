@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="promocionApp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="base2.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-controller="controlador1">
+        <div class="contenedor">
+            <p ng-style="estilos">Yo controlo el estilo de mis <span ng-class = "claseEspecial">aplicaciones</span></p> 
+        </div>
+
+        <div class="contenedor2">
+            <button ng-click="cambiarPropiedad()">Cambiar Propiedades</button>
+            <button ng-click="cambiarClases()">Cambiar Clases</button>
+            <button ng-click="reiniciarEstilos()">reiniciar Clases</button>
+        </div>
+    </div>
+
+    <script>
+        var miApp = angular.module('promocionApp', []);
+        miApp.controller('controlador1', ['$scope', function($scope){
+            $scope.cambiarPropiedad = function(){
+                $scope.estilos = { "background": "yellow" , "color" : "white" }
+            }
+            $scope.cambiarClases = function(){
+                $scope.claseEspecial = "angular"
+            }
+            $scope.reiniciarEstilos = function(){
+                $scope.estilos = "";
+                $scope.claseEspecial ="";
+            }
+        }]);
+    </script>
+</body>
+
+</html>

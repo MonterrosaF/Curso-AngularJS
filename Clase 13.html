@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="promocionApp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="base2.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <style>
+        .alerta {
+            background-color: black;
+            color: white;
+            width: 600px;
+            height: 300px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div ng-controller="controlador1">
+        <div class="alerta" ng-show="visibilidad">
+            <p>mensaje secreto</p>
+        </div>
+
+        <button ng-click="cambiarVisibilidad()">Cambiar visibilidad</button>
+
+    </div>
+
+    <script>
+        var miApp = angular.module('promocionApp', []);
+        miApp.controller('controlador1', ['$scope', function ($scope) {
+            $scope.visibilidad = false;
+
+            $scope.cambiarVisibilidad = function () {
+                    $scope.visibilidad = true
+            }
+
+
+        }]);
+
+
+    </script>
+</body>
+
+</html>
